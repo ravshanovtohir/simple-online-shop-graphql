@@ -96,7 +96,7 @@ export default {
             return {
                 status: 201,
                 message: "The category successfully deleted",
-                data: category
+                data: deletedCategory
             }
         }
     }

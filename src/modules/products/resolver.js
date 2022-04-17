@@ -63,70 +63,77 @@ export default {
                 data: newProduct
             }
         },
-        //     //mutation editing category
-        //     editProduct: (_, { categoryId, categoryName, userId }, { read, write }) => {
-        //         const categories = read("catigories")
-        //         const users = read("users")
+        //mutation editing category
+        editProduct: (_, { userId, categoryId, productName, price, shortDesc, longDesc, productId }, { read, write }) => {
+            const categories = read("catigories")
+            const users = read("users")
+            const products = read("products")
 
-        //         const category = categories.find(el => el.categoryId == categoryId)
-        //         const user = users.find(el => el.userId == userId)
+            const category = categories.find(el => el.categoryId == categoryId)
+            const user = users.find(el => el.userId == userId)
+            const product = products.find(el => el.productId == productId)
 
 
-        //         if (!user) {
-        //             throw new Error("User not found")
-        //         }
+            if (!user) {
+                throw new Error("User not found")
+            }
 
-        //         if (!category) {
-        //             throw new Error("With this categoryId category not found")
-        //         }
+            if (!product) {
+                throw new Error("With this productId product not found")
+            }
 
-        //         if (user.role != "admin") {
-        //             throw new Error("YOu are not an admin for that you cant edit  category!!!")
-        //         }
+            if (user.role != "admin") {
+                throw new Error("YOu are not an admin for that you cant edit  category!!!")
+            }
 
-        //         if (user.role == "admin") {
-        //             category.categoryName = categoryName
-        //         }
+            if (user.role == "admin") {
+                product.productName = productName ? productName : product.productName
+                product.price = price ? price : product.price
+                product.shortDesc = shortDesc ? shortDesc : product.shortDesc
+                product.longDesc = longDesc ? longDesc : product.longDesc
+                product.categoryId = categoryId ? categoryId : product.categoryId
+            }
 
-        //         write("catigories", categories)
+            write("products", products)
 
-        //         return {
-        //             status: 201,
-        //             message: "The category successfully edited",
-        //             data: category
-        //         }
+            return {
+                status: 201,
+                message: "The product successfully edited",
+                data: product
+            }
 
-        //     },
+        },
 
-        //     //mutation deleting category
-        //     deleteProduct: (_, { categoryId, userId }, { read, write }) => {
-        //         const categories = read("catigories")
-        //         const users = read("users")
+        //mutation deleting category
+        deleteProduct: (_, { productId, userId }, { read, write }) => {
+            const users = read("users")
+            const products = read("products")
 
-        //         const deletedCategory = categories.find(el => el.categoryId == categoryId)
-        //         const user = users.find(el => el.userId == userId)
-        //         const category = categories.filter(el => el.categoryId != categoryId)
+            const user = users.find(el => el.userId == userId)
+            const deletedProducts = products.find(el => el.productId == productId)
+            const product = products.filter(el => el.productId != productId)
 
-        //         if (!user) {
-        //             throw new Error("User not found")
-        //         }
 
-        //         if (!deletedCategory) {
-        //             throw new Error("With this categoryId category not found")
-        //         }
+            if (!user) {
+                throw new Error("User not found")
+            }
 
-        //         if (user.role != "admin") {
-        //             throw new Error("YOu are not an admin for that you cant delete category!!!")
-        //         }
+            if (!deletedProducts) {
+                throw new Error("With this productId product not found")
+            }
 
-        //         write("catigories", category)
+            if (user.role != "admin") {
+                throw new Error("YOu are not an admin for that you cant delete product!!!")
+            }
 
-        //         return {
-        //             status: 201,
-        //             message: "The category successfully deleted",
-        //             data: category
-        //         }
-        //     }
+            write("products", product)
+
+            return {
+                status: 201,
+                message: "The product successfully deleted",
+                data: deletedProducts
+            }
+        }
     }
 
 

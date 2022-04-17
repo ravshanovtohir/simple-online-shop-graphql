@@ -1,4 +1,5 @@
-[{
+[
+    {
         "productId": 1,
         "productName": "Sariq devni minib",
         "price": 25000,
@@ -13,13 +14,5 @@
         "shortDesc": "Core i5",
         "longDesc": "Core i5 ram 8",
         "categoryId": 2
-    },
-    {
-        "productId": 3,
-        "productName": "Kichik shaxzoda",
-        "price": 14000,
-        "shortDesc": "Kichik Shahazoda asari",
-        "longDesc": "kimningdir Kichik Shahazoda asari",
-        "categoryId": "1"
     }
 ]
