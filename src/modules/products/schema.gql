@@ -1,0 +1,41 @@
+type Query {
+  products(productId: ID): [Product!]!
+}
+
+type Mutation {
+  addProduct(
+    userId: ID!
+    categoryId: ID!
+    productName: String!
+    price: Int!
+    shortDesc: String!
+    longDesc: String!
+  ): ResponseProduct!
+
+  editProduct(
+    userId: ID!
+    productId: ID!
+    categoryId: ID
+    productName: String
+    price: Int
+    shortDesc: String
+    longDesc: String
+  ): ResponseProduct!
+
+  deleteProduct(productId: ID!, userId: ID!): ResponseData!
+}
+
+type Product {
+  productId: ID!
+  productName: String!
+  price: Int!
+  shortDesc: String!
+  longDesc: String!
+  categoryId: ID!
+}
+
+type ResponseProduct {
+  status: Int!
+  message: String!
+  data: Product
+}

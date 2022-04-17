@@ -1,0 +1,19 @@
+[
+
+    {
+        "userId": 1,
+        "userName": "Abdulaziz",
+        "password": "12345678",
+        "contact": "998969566852",
+        "email": "sadsafasf@gmail.com",
+        "role": "admin"
+    },
+    {
+        "userId": 2,
+        "userName": "Ganisher",
+        "password": "12345678",
+        "contact": "998969566852",
+        "email": "sadsafasf@gmail.com",
+        "role": "user"
+    }
+]

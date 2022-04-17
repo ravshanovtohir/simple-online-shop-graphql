@@ -1,0 +1,26 @@
+type Query {
+  categories(categoryId: ID): [Category!]!
+}
+
+type Mutation {
+  addCategory(categoryName: String!, userId: ID!): ResponseData!
+
+  editCategory(
+    categoryId: ID!
+    categoryName: String!
+    userId: ID!
+  ): ResponseData!
+
+  deleteCategory(categoryId: ID!, userId: ID!): ResponseData!
+}
+
+type Category {
+  categoryId: ID!
+  categoryName: String!
+}
+
+type ResponseData {
+  status: Int!
+  message: String!
+  data: Category
+}

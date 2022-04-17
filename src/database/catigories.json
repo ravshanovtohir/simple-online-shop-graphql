@@ -1,0 +1,14 @@
+[
+    {
+        "categoryId": 1,
+        "categoryName": "books"
+    },
+    {
+        "categoryId": 2,
+        "categoryName": "phones"
+    },
+    {
+        "categoryId": 3,
+        "categoryName": "laptops"
+    }
+]
