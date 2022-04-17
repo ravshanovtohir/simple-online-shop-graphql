@@ -1,8 +1,6 @@
-[
-
-    {
+[{
         "userId": 1,
-        "userName": "Abdulaziz",
+        "username": "Abdulaziz",
         "password": "12345678",
         "contact": "998969566852",
         "email": "sadsafasf@gmail.com",
@@ -10,7 +8,7 @@
     },
     {
         "userId": 2,
-        "userName": "Ganisher",
+        "username": "Ganisher",
         "password": "12345678",
         "contact": "998969566852",
         "email": "sadsafasf@gmail.com",

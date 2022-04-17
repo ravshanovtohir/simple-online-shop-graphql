@@ -1,0 +1,34 @@
+type Query {
+  login(username: String!, password: String!): ResponseAuth!
+}
+
+type Mutation {
+  register(
+    username: String!
+    password: String!
+    contact: String!
+    email: String!
+  ): ResponseAuth!
+
+  adminRegister(
+    username: String!
+    password: String!
+    contact: String!
+    email: String!
+    authCode: String!
+  ): ResponseAuth!
+}
+
+type ResponseAuth {
+  status: Int!
+  message: String!
+  data: User
+}
+
+type User {
+  userId: ID!
+  username: String!
+  contact: String!
+  email: String!
+  role: String!
+}
