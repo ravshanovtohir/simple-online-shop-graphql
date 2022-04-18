@@ -1,0 +1,7 @@
+type Query {
+  stats: Stat!
+}
+
+type Stat {
+    daromad: Int!
+}
