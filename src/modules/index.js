@@ -4,6 +4,7 @@ import categoryModule from "./category/index.js"
 import productModule from "./products/index.js";
 import userModule from "./user/index.js"
 import authModule from "./auth/index.js";
+import orderModule from "./order/index.js";
 
 
 export const schema = makeExecutableSchema({
@@ -11,12 +12,14 @@ export const schema = makeExecutableSchema({
         categoryModule.typeDefs,
         productModule.typeDefs,
         userModule.typeDefs,
-        authModule.typeDefs
+        authModule.typeDefs,
+        orderModule.typeDefs
     ],
     resolvers: [
         categoryModule.resolvers,
         productModule.resolvers,
         userModule.resolvers,
-        authModule.resolvers
+        authModule.resolvers,
+        orderModule.resolvers
     ]
 })

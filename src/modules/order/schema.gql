@@ -1,0 +1,36 @@
+type Query {
+  orders(orderId: ID): [Order!]!
+}
+
+type Mutation {
+  addOrder(
+    productId: ID!
+    userId: ID!
+    price: Int!
+    count: Int!
+  ): ResponseOrder!
+}
+
+type Order {
+  orderId: ID!
+  userId: ID!
+  productId: ID!
+  isPaid: Boolean!
+  orderCreated: String!
+  price: Int!
+  count: Int!
+}
+
+type OrderProduct {
+  orderProductId: ID!
+  orderId: ID!
+  productId: ID!
+}
+
+scalar Date
+
+type ResponseOrder {
+  status: Int!
+  message: String!
+  data: OrderProduct
+}

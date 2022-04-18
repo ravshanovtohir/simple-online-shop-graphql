@@ -13,5 +13,13 @@
         "contact": "998969566852",
         "email": "sadsafasf@gmail.com",
         "role": "user"
+    },
+    {
+        "userId": 3,
+        "username": "Ali",
+        "password": "123465789",
+        "contact": "998959871423",
+        "email": "nadsagd@gmail.com",
+        "role": "admin"
     }
 ]

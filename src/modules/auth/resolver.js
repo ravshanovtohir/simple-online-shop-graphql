@@ -53,10 +53,10 @@ export default {
             return {
                 status: 201,
                 message: "The user registered successfully!",
-                data: newUser
-            }
-        },
 
+            }
+
+        },
         adminRegister: (_, { username, password, contact, email, authCode }, { read, write }) => {
 
             const users = read("users")
